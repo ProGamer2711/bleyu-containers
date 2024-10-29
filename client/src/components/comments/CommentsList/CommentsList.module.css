@@ -1,0 +1,37 @@
+.comments-list {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+
+	border-radius: 0.5rem;
+	width: 100%;
+}
+
+.comment-create-btn {
+	align-self: flex-end;
+
+	display: flex;
+	align-items: center;
+	justify-content: right;
+
+	color: #f0f4ef;
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+	border: 1px solid #f0f4ef;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+.no-comments {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+
+.no-comments * {
+	margin: 0.5rem;
+}

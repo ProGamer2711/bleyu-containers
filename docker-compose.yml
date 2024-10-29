@@ -1,0 +1,42 @@
+services:
+ mongodb:
+  container_name: mongodb
+  networks:
+   - bleyu-backend-database
+  volumes:
+   - mongodb_data:/data/db
+  environment:
+   MONGO_INITDB_ROOT_USERNAME: "root"
+   MONGO_INITDB_ROOT_PASSWORD: "3IMzXoNs7tJgFI+1IVtgSM2frYDxhBMpLFBN7aRATug="
+  image: mongo
+
+ bleyu-server:
+  container_name: bleyu-server
+  networks:
+   - bleyu-backend-database
+   - bleyu-backend-frontend
+  environment:
+   DB_URI: "mongodb://root:3IMzXoNs7tJgFI+1IVtgSM2frYDxhBMpLFBN7aRATug=@mongodb:27017"
+   TOKEN_KEY: "UYnQo65Kb533YoybIKnmvsaEkLfs10xPg5oU9L06Lo8="
+   WHITELISTED_DOMAINS: "http://localhost:3000"
+   NODE_ENV: "production"
+  ports:
+   - 8393:8393
+  build: ./server
+
+ bleyu-frontend:
+  container_name: bleyu-frontend
+  networks:
+   - bleyu-backend-frontend
+  ports:
+   - 3000:3000
+  build: ./client
+
+networks:
+ bleyu-backend-database:
+  name: bleyu-backend-database
+ bleyu-backend-frontend:
+  name: bleyu-backend-frontend
+
+volumes:
+ mongodb_data:

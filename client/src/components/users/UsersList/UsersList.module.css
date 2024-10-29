@@ -1,0 +1,23 @@
+.users-list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.no-users {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+
+.no-users * {
+	margin: 0.5rem;
+}

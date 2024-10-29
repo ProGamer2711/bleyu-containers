@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+/* Color palette
+#f0f4ef
+#1464cf
+#eb9b30
+#0f0b10
+*/
+
+:root {
+	--inversionPercentage: 100%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Source Sans Pro", sans-serif;
+	box-sizing: border-box;
+}
+
+button {
+	cursor: pointer;
+	background-color: #1464cf;
+	color: #f0f4ef;
+	border: none;
+	padding: 3px;
+	transition: all 0.3s ease-in-out;
+}
+
+a {
+	color: #0f0b10;
+	transition: all 0.3s ease-in-out;
+}
+
+button:hover,
+a:hover {
+	background-color: #eb9b30;
+	color: #0f0b10;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 90vh;
+	background-color: #f0f4ef;
+	filter: invert(var(--inversionPercentage, 0%));
+	transition: all 0.3s ease-in-out;
+}

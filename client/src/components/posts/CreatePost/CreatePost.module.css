@@ -1,0 +1,8 @@
+.create-post {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 90vh;
+	width: 100vw;
+}
